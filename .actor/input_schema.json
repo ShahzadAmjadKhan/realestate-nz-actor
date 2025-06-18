@@ -1,0 +1,51 @@
+{
+  "title": "Real Estate NZ Scraper Configuration",
+  "description": "Configure the scraper parameters for extracting property listings from realestate.co.nz",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "maxPages": {
+      "title": "Maximum Pages",
+      "type": "integer",
+      "description": "Maximum number of pages to scrape",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 50
+    },
+    "location": {
+      "title": "Location",
+      "type": "string",
+      "description": "Location to scrape (e.g., queenstown, auckland, wellington)",
+      "default": "queenstown",
+      "enum": [
+        "queenstown",
+        "auckland",
+        "wellington",
+        "christchurch",
+        "hamilton",
+        "tauranga",
+        "dunedin",
+        "palmerston-north",
+        "nelson",
+        "rotorua"
+      ]
+    },
+    "minDelay": {
+      "title": "Minimum Delay (seconds)",
+      "type": "integer",
+      "description": "Minimum delay between requests in seconds",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "maxDelay": {
+      "title": "Maximum Delay (seconds)",
+      "type": "integer",
+      "description": "Maximum delay between requests in seconds",
+      "default": 4,
+      "minimum": 1,
+      "maximum": 5
+    }
+  },
+  "required": []
+}

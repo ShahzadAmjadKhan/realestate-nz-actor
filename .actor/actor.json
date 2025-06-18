@@ -1,0 +1,44 @@
+{
+  "actorSpecification": 1,
+  "name": "real-estate-nz-scraper",
+  "title": "Real Estate NZ Scraper",
+  "description": "Scrapes property listings from realestate.co.nz for New Zealand real estate data with configurable locations and parameters",
+  "version": "0.1",
+  "build": {
+    "tag": "latest"
+  },
+  "environmentVariables": {},
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "input": "./.actor/input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Property Listings",
+      "description": "Scraped property listings from realestate.co.nz",
+      "views": {
+        "overview": {
+          "title": "Property Overview",
+          "transformation": {
+            "fields": [
+              "propertyAddress",
+              "propertyType", 
+              "salesMethod",
+              "bedrooms",
+              "bathrooms",
+              "agentNames",
+              "listingDate"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "platform": "python",
+  "categories": ["REALESTATE"],
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 3600,
+    "memoryMbytes": 2048
+  }
+}
