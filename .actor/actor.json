@@ -9,8 +9,8 @@
   },
   "environmentVariables": {},
   "dockerfile": "./Dockerfile",
-  "readme": "./README.md",
-  "input": "./.actor/input_schema.json",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
   "storages": {
     "dataset": {
       "actorSpecification": 1,
